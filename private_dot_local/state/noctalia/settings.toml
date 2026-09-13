@@ -1,0 +1,173 @@
+config_version = 14
+
+[bar.default]
+center = []
+end = [ "control-center", "clock" ]
+margin_ends = 300
+position = "bottom"
+reserve_space = false
+scale = 2.200000025331974
+smart_auto_hide = true
+start = [ "launcher", "taskbar" ]
+thickness = 64
+
+[control_center]
+hidden_tabs = [ "media", "monitor", "power", "weather", "calendar", "screen-time" ]
+sidebar = "full"
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "notification"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
+
+    [[control_center.shortcuts]]
+    type = "session"
+
+[dock]
+launcher_position = "start"
+pinned = [ "helium" ]
+reserve_space = false
+smart_auto_hide = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@HDMI-A-2" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 548.5
+    cy = 539.01800537109375
+    output = "HDMI-A-2"
+    placement_height = 617.0
+    placement_width = 1097.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[notification]
+position = "top_center"
+
+[osd]
+position = "bottom_center"
+position_vertical = "bottom_center"
+
+[shell]
+clipboard_enabled = false
+time_format = "{:%-I:%M %p}"
+
+    [shell.launcher]
+    app_grid = true
+    categories = false
+    pinned = [ "helium", "spotify-launcher" ]
+
+    [shell.panel]
+    control_center_placement = "floating"
+    control_center_position = "top_center"
+    floating_layer = "top"
+    launcher_position = "top_center"
+    session_placement = "floating"
+    session_position = "center"
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+[theme]
+mode = "dark"
+source = "community"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "niri", "qt" ]
+
+[wallpaper]
+directory = "/usr/share/wallpapers"
+enabled = false
+
+    [wallpaper.default]
+    path = "/usr/share/wallpapers/cachyos-wallpapers/Dimensions.png"
+
+    [wallpaper.last]
+    path = "/usr/share/wallpapers/cachyos-wallpapers/Dimensions.png"
+
+    [wallpaper.monitors.HDMI-A-2]
+    path = "/usr/share/wallpapers/cachyos-wallpapers/Dimensions.png"
+
+[widget.clock]
+format = "{:%-I:%M %p}"
+
+[widget.control-center]
+glyph = "settings-filled"
+
+[widget.launcher]
+glyph = "grid-dots"
+
+[widget.network]
+show_label = false
+
+[widget.taskbar]
+icon_scale = 1.3500000000000001
+pinned = [ "helium", "spotify-launcher" ]
+
+[widget.volume]
+show_label = false
