@@ -4,7 +4,7 @@
 // https://niri-wm.github.io/niri/Configuration:-Introduction
 
 environment {
-    QT_QPA_PLATFORMTHEME "gtk3"
+    QT_QPA_PLATFORMTHEME "qt6ct"
 }
 
 input {
@@ -15,6 +15,12 @@ input {
         tap
         natural-scroll
     }
+}
+
+output "HDMI-A-2" {
+    mode "3840x2160@60.000"
+    scale 3.5
+    position x=0 y=0
 }
 
 layout {
@@ -60,7 +66,7 @@ hotkey-overlay {
 
 screenshot-path null
 
-spawn-sh-at-startup "dms run"
+spawn-sh-at-startup "noctalia"
 spawn-sh-at-startup "squeekboard"
 
 binds {
@@ -219,6 +225,6 @@ binds {
 }
 
 // DMS Include Configs
-include optional=true "dms/cursor.kdl"
-include optional=true "dms/windowrules.kdl"
-include optional=true "dms/outputs.kdl"
+// include optional=true "dms/cursor.kdl"
+// include optional=true "dms/windowrules.kdl"
+// include optional=true "dms/outputs.kdl"
