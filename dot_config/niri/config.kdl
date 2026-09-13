@@ -23,6 +23,12 @@ output "HDMI-A-2" {
     position x=0 y=0
 }
 
+cursor {
+    xcursor-theme "breeze_cursors"
+    xcursor-size 48
+    hide-after-inactive-ms 2000
+}
+
 layout {
     gaps 32
     struts {
@@ -54,7 +60,6 @@ window-rule {
     open-maximized-to-edges true
     //open-fullscreen true
 }
-
 
 gestures {
     hot-corners { off; }
@@ -215,13 +220,15 @@ binds {
     XF86WWW repeat=false   { spawn-sh "dms ipc call spotlight toggle"; }
     Prior   { spawn-sh "ydotool mousemove -w -x  0  -y  2"; }
     Next    { spawn-sh "ydotool mousemove -w -x  0  -y -2"; }
-    Menu repeat=false   { toggle-overview; }
-    //Up repeat=false     { spawn-sh "ydotool click C1"; } // right click
-    //Down repeat=false allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    Menu repeat=false   { spawn-sh "ydotool click C1"; } // right click
+    
+    // kind of trying to go for ipod clickwheel style controls...
+    Up   repeat=false   { toggle-overview; }
+    Down repeat=false allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     //XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "ydotool key 29:1 13:1 13:0 29:0"; } // ctrl + plus to zoom in (ctrl is keycode 29)
     //XF86AudioLowerVolume allow-when-locked=true { spawn-sh "ydotool key 29:1 12:1 12:0 29:0"; } // ctrl + minus to zoom out
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "dms ipc call audio increment 3"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "dms ipc call audio decrement 3"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "noctalia msg volume-up 3"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "noctalia msg volume-down 3"; }
 }
 
 // DMS Include Configs
